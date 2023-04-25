@@ -25,7 +25,7 @@ public class StoreRestController {
                     @Content(schema = @Schema(implementation = Store.class), mediaType = "application/json")}),
             @ApiResponse(responseCode = "500", content = {@Content(schema = @Schema())})})
     @PostMapping("/stores")
-    public Store createMessage(@RequestBody Store store) throws StoreModelException {
+    public Store createStore(@RequestBody Store store) throws StoreModelException {
         return storeModelService.provisionStore(store.getId(), store.getAddress(), store.getDescription(), null);
     }
 
