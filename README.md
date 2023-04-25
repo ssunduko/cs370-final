@@ -2,6 +2,8 @@
 
 <p>This is the Final Project for the CS370</p>
 
+<p>Another small change</p>
+
 ## Links
 
 - [Repo](https://github.com/ssunduko/cs370-final "<project-name> Repo")
