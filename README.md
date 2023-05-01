@@ -2,7 +2,7 @@
 
 <p>This is the Final Project for the CS370</p>
 
-<p>Another small change</p>
+<p>Another small change again</p>
 
 ## Links
 
