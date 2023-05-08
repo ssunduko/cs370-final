@@ -53,5 +53,5 @@ jobs:
           echo "$PRIVATE_KEY" > private_key.pem && chmod 600 private_key.pem
           ssh -o StrictHostKeyChecking=no -i private_key.pem ${USER_NAME}@${HOSTNAME} '
             cd /home/ec2-user/Final
-            sudo nohup mvn exec:java -Dexec.mainClass=com.cs370.storemodel.SmartStoreApplication
+            sudo nohup mvn exec:java -Dexec.mainClass=com.cs370.storemodel.SmartStoreApplication > nohup.out &
           '
