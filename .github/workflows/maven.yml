@@ -54,9 +54,11 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
 
             #Now we have got the access of EC2 and we will start the deploy .
-            cd /home/ec2-user/cs370-final &&
-            git checkout master &&
-            git fetch --all &&
-            git reset --hard origin/master &&
-            git pull origin master &&
+            #cd /home/ec2-user/cs370-final &&
+            #git checkout master &&
+            #git fetch --all &&
+            #git reset --hard origin/master &&
+            #git pull origin master &&
+            cd /home/ec2-user/Final &&
+            nohup mvn exec:java -Dexec.mainClass=com.cs370.storemodel.SmartStoreApplication &&
           '
