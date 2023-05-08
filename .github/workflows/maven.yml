@@ -38,7 +38,7 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-  Deploy:
+  deploy:
     needs: build
     runs-on: ubuntu-latest
 
@@ -54,5 +54,4 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key.pem ${USER_NAME}@${HOSTNAME} '
             cd /home/ec2-user/Final &&
             nohup mvn exec:java -Dexec.mainClass=com.cs370.storemodel.SmartStoreApplication &&
-
           '
