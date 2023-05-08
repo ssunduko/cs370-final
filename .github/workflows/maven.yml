@@ -50,6 +50,6 @@ jobs:
           HOSTNAME: ${{ secrets.HOSTNAME  }}
           USER_NAME: ${{ secrets.USER_NAME  }}
         run: |
-          echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnlwMlBJIh2rVsWw5Vxz8Y+ZCFYn3hub5h5U5cdh6tFdCMN4IpUZYdjXr2ShSPZTSWljES50nsSauHqcKfeSAPS34nUxYZVW6l+2D6CQ5H6/GQT5XDN09GyR8L6qzLj9ziZOwwnnU86gmfMVZOLSGVFQw7NizA5l3pRWZw3XFJC/so9ETTXd/N3+Yh+YAyJGnW0OQ+J19tioyaxKKYdE2jH4cgeDfosaqdce9wn0c2Nyvmg5T68zM/dQHocLRQLK8V9Tg6VCLb4+peVSVUmOCOaduF2g5Ari2OMNGc9y/ZE4ct4kiF9NafFm7MiBW7X8TxmOlkv1ZRM0gvQ5FetZzD+DMymTABZn25MbmDVulxCcjQ9mAtkSyVZ2C4YuP6/cH3zaogD/ZSUQfbxHnxDaTVYaHoRUxiwO3HqkV5c8uiaIAn77c0LxhOVrNftAW0APZ3CfkHQ009gt053x/ywUiIfF6tNhOFp7ikiawFLoHoOtQxQtrP4P85XBtMpB7k78k= ssund@DESKTOP-PT9NPPA" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ec2-user@52.35.70.237 '
+          echo "$PRIVATE_KEY" > private_key.pem && chmod 600 private_key.pem
+          ssh -o StrictHostKeyChecking=no -i private_key.pem ${USER_NAME}@${HOSTNAME} '
           '
